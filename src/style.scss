@@ -1,0 +1,111 @@
+/*
+    VARIABLES
+*/
+
+$main_height: calc((100vh - (2.5vh * 2)) / 10);
+
+/*
+    MIXINS
+*/
+@mixin flex($jc: center, $ai: center, $fd: row, $fw: wrap) {
+	display: flex;
+	justify-content: $jc;
+	align-items: $ai;
+	flex-direction: $fd;
+	flex-wrap: $fw;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 2.5vh;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
+.main {
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+
+	&:hover > .picture {
+		height: calc((100vh - (2.5vh * 2) / 10) / 6);
+	}
+}
+
+.picture {
+	position: relative;
+	width: calc(100% - 6px);
+	margin: 0 auto;
+	height: $main_height;
+	cursor: pointer;
+	overflow: hidden;
+
+	&:hover {
+		height: 40%;
+		outline-color: red;
+		outline-style: double;
+		transform-origin: bottom;
+		z-index: 2;
+	}
+
+	&:hover .picture_h6,
+	&:hover .picture_p {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+.picture_img {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+	object-fit: cover;
+	z-index: -2;
+}
+
+.picture_h6 {
+	margin-top: 3rem;
+	margin-left: auto;
+	padding: 1rem 2rem;
+	background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.15));
+	color: white;
+	font-size: 2.6rem;
+	font-weight: 100;
+	letter-spacing: 1.5px;
+	opacity: 0;
+	text-align: right;
+	text-transform: uppercase;
+	transform: translate(0, -100%);
+	transition: all 0.3s ease-in-out;
+	white-space: nowrap;
+}
+
+.picture_p {
+	margin: 1.5rem 5rem;
+	background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.15));
+	color: white;
+	opacity: 0;
+	font-size: 1.6rem;
+	transform: translate(0, 100%);
+	transition: all 0.5s ease-out;
+
+	&:first-letter {
+		margin-left: 5%;
+		float: left;
+		font-size: 3rem;
+	}
+}

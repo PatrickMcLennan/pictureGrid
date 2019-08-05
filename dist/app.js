@@ -1,0 +1,1 @@
+"use strict";var hello=function(){return console.log("hello")},goodbye=function(){return console.log("goodbye")};

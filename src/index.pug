@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="./style.css")
+        script(defer src="./app.js")
+        title Document
+    body
+        main.main
+
+            each picture in [...Array(10).keys()]
+                section.picture
+                    picture.picture_picture
+                        source.picture_source(srcset='../imgs/picture-' + picture + '-lrg.jpg', media='(min-width: 751px)')
+                        source.picture_source(srcset='../imgs/picture-' + picture + '-sml.jpg', media='(max-width: 750px)')
+                        img.picture_img(src='../imgs/picture-' + picture + '-sml.jpg', alt="Picture " + (picture + 1))
+                    
+                    h6.picture_h6 Picture #{picture + 1}
+
+                    p.picture_p Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptatem minima nihil! Praesentium minus, quos dicta iure soluta magnam exercitationem facilis blanditiis maxime nostrum nemo alias molestias veniam distinctio porro repellendus molestiae. Necessitatibus deleniti sit eveniet animi quae, aspernatur dolore rem corrupti reprehenderit, optio natus reiciendis placeat adipisci alias, hic quam perferendis porro nesciunt est perspiciatis at! Maxime veniam iure eveniet deleniti vel, dicta corrupti?
