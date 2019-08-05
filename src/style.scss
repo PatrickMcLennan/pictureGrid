@@ -39,10 +39,6 @@ body {
 	height: 100%;
 	margin: 0 auto;
 	overflow: hidden;
-
-	&:hover > .picture {
-		height: calc((100vh - (2.5vh * 2) / 10) / 6);
-	}
 }
 
 .picture {
@@ -54,7 +50,7 @@ body {
 	overflow: hidden;
 
 	&:hover {
-		height: 40%;
+		height: calc(((100vh - (2.5vh * 2)) / 10) * 3);
 		outline-color: red;
 		outline-style: double;
 		transform-origin: bottom;
